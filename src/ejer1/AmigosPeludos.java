@@ -16,32 +16,116 @@ public class AmigosPeludos {
 	private boolean tipoAtencion;
 	
 
+
+	public AmigosPeludos() {
+
+		
+	}
 	
 
 
 
+	public String getNombre() {
+		return nombre;
+	}
 
-	public AmigosPeludos(String nombre, String tipoAnimal, String nombreDuenio, int telefono,
-			LocalDate fechaTurno) {
+
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+
+	public double getPeso() {
+		return peso;
+	}
+
+
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+
+
+	public String getTipoAnimal() {
+		return tipoAnimal;
+	}
+
+
+	public void setTipoAnimal(String tipoAnimal) {
 		this.tipoAnimal = tipoAnimal;
+	}
+
+
+
+	public String getNombreDuenio() {
+		return nombreDuenio;
+	}
+
+
+	public void setNombreDuenio(String nombreDuenio) {
 		this.nombreDuenio = nombreDuenio;
+	}
+
+	public int getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(int telefono) {
 		this.telefono = telefono;
+	}
+
+
+	public LocalDate getFechaTurno() {
+		return fechaTurno;
+	}
+
+
+	public void setFechaTurno(LocalDate fechaTurno) {
 		this.fechaTurno = fechaTurno;
 	}
 
 
 
+	public boolean isEstadoSalud() {
+		return estadoSalud;
+	}
+
+
+	public void setEstadoSalud(boolean estadoSalud) {
+		this.estadoSalud = estadoSalud;
+	}
+
+	public boolean isTipoAtencion() {
+		return tipoAtencion;
+	}
 
 
 
+	public void setTipoAtencion(boolean tipoAtencion) {
+		this.tipoAtencion = tipoAtencion;
+	}
 
-	public void AgendarTurno() {
+
+
+	public void agendarTurno() {
+				
 		
-		tipoAnimal = JOptionPane.showInputDialog("Ingrese el tipo de animmal");
+		if (!(this.nombre.isEmpty() && this.tipoAnimal.isEmpty()  && this.nombreDuenio.isEmpty() && this.telefono <= 0)) {
+			
+			if (getFechaTurno() == getFechaTurno()) {
+				JOptionPane.showMessageDialog(null, "Ya hay un turno agendado para esa fecha");
+			} else {
+				JOptionPane.showMessageDialog(null, " Turno agendado para " + getNombre() + " cuyo dueño es " + getNombreDuenio() + " para el dia " + getFechaTurno());
+				
+			}
+		}
+	}
+	
+	public String seguimiento(String nombre) {
 		
-		nombre = JOptionPane.showInputDialog("Ingrese nombre del animal");
-		
+		return nombre;
 		
 	}
 	
