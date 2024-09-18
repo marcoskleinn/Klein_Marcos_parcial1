@@ -17,9 +17,9 @@ public class AmigosPeludos {
 	
 
 
-	public AmigosPeludos() {
+	public AmigosPeludos(LocalDate fechaTurno) {
 
-		
+		this.fechaTurno = fechaTurno;
 	}
 	
 
@@ -110,21 +110,45 @@ public class AmigosPeludos {
 
 
 	public void agendarTurno() {
-				
 		
-		if (!(this.nombre.isEmpty() && this.tipoAnimal.isEmpty()  && this.nombreDuenio.isEmpty() && this.telefono <= 0)) {
-			
-			if (getFechaTurno() == getFechaTurno()) {
-				JOptionPane.showMessageDialog(null, "Ya hay un turno agendado para esa fecha");
-			} else {
-				JOptionPane.showMessageDialog(null, " Turno agendado para " + getNombre() + " cuyo dueño es " + getNombreDuenio() + " para el dia " + getFechaTurno());
+		nombre = JOptionPane.showInputDialog("Ingrese nombre de la mascota");
+		nombreDuenio = JOptionPane.showInputDialog("Nombre del dueño");
+		telefono = Integer.parseInt(JOptionPane.showInputDialog("Telefono"));
+		
+		
+		int anio = 2024;
+		int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de la consulta (en numero)"));
+		int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dia de la consulta"));
+
+		
+			if (!(this.nombre.isEmpty() && this.tipoAnimal.isEmpty()  && this.nombreDuenio.isEmpty() &&
+					this.telefono <= 0 && mes < 31 && dia > 0 && dia < 32)) {
+
+		JOptionPane.showMessageDialog(null, " Turno agendado para " + getNombre() + " cuyo dueño es " + getNombreDuenio() + " para el dia " + fechaTurno);
 				
+			} else {
+				JOptionPane.showMessageDialog(null, "Error");
 			}
 		}
-	}
-	
-	public String seguimiento(String nombre) {
 		
+	
+	public String consulta(String nombre) {
+		
+		String salud = JOptionPane.showInputDialog(null, "Diga el estado de salud del animal (diga mala o buena)");
+		if (salud.equalsIgnoreCase("buena")) {
+			estadoSalud = true;
+			JOptionPane.showMessageDialog(null, getNombre());
+			int vacunas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de vacunas"));
+			if (vacunas >= 3) {
+				JOptionPane.showMessageDialog(null, " Debe tener mas de 5 vacunas");
+				JOptionPane.showMessageDialog(null, "El siguiente turno debe ser un tipo de atencion adicional");
+				tipoAtencion = true;
+			}
+		} else if (salud.equalsIgnoreCase("mala")) {
+			nombre = JOptionPane.showInputDialog(getNombre());
+			JOptionPane.showMessageDialog(null, "El siguiente turno debe ser un tipo de un tratamiento");
+			tipoAtencion = false;
+		}
 		return nombre;
 		
 	}
