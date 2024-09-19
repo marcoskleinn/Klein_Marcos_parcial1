@@ -11,7 +11,7 @@ public class AmigosPeludos {
 	private String tipoAnimal;
 	private String nombreDuenio;
 	private int telefono;
-	LocalDate fechaTurno;
+	private LocalDate fechaTurno;
 	private boolean estadoSalud; 
 	private boolean tipoAtencion;
 	
@@ -123,6 +123,8 @@ public class AmigosPeludos {
 		
 			if (!(this.nombre.isEmpty() && this.tipoAnimal.isEmpty()  && this.nombreDuenio.isEmpty() &&
 					this.telefono <= 0 && mes < 31 && dia > 0 && dia < 32)) {
+				
+				fechaTurno = LocalDate.of(anio, mes, dia);
 
 		JOptionPane.showMessageDialog(null, " Turno agendado para " + getNombre() + " cuyo dueño es " + getNombreDuenio() + " para el dia " + fechaTurno);
 				
