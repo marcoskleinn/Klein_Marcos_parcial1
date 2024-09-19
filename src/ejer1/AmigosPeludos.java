@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 public class AmigosPeludos {
 	
 	private String nombre;
-	private double peso;
 	private String tipoAnimal;
 	private String nombreDuenio;
 	private int telefono;
@@ -32,17 +31,6 @@ public class AmigosPeludos {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-
-	public double getPeso() {
-		return peso;
-	}
-
-
-
-	public void setPeso(double peso) {
-		this.peso = peso;
 	}
 
 
@@ -132,6 +120,7 @@ public class AmigosPeludos {
 				JOptionPane.showMessageDialog(null, "Error");
 			}
 		}
+	
 		
 	
 	public String consulta(String nombre) {
