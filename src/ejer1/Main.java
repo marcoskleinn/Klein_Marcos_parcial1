@@ -34,8 +34,8 @@ public class Main {
 					
 				case 1:
 					
-					cliente1.consulta("");
-					
+					cliente1.consulta(cliente1.getNombre());
+					cliente2.consulta(cliente2.getNombre());
 					break;
 					
 				case 2:
