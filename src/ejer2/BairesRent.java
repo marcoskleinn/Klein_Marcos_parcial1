@@ -19,9 +19,12 @@ public class BairesRent {
 	private boolean alquilado;
 	private Period periodo;
 	
+	
+
+
 	public BairesRent(LocalDate ingreso, int estadia, int huespedes, int dormitorios, int ubicacion, LocalDate chekout,
-			boolean alquilado) {
-		
+			boolean alquilado, Period periodo) {
+		super();
 		this.ingreso = ingreso;
 		this.estadia = estadia;
 		this.huespedes = huespedes;
@@ -29,13 +32,14 @@ public class BairesRent {
 		this.ubicacion = ubicacion;
 		this.chekout = chekout;
 		this.alquilado = alquilado;
+		this.periodo = periodo;
 	}
 
 
-	
 
-	
-	
+
+
+
 
 	public Period getPeriodo() {
 		return periodo;
@@ -176,11 +180,11 @@ public class BairesRent {
 		huespedes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad de huespedes"));
 		
 		int opcion;
-		 opcion = JOptionPane.showOptionDialog(null, "Accion", "Propiedades", 0, JOptionPane.DEFAULT_OPTION, new ImageIcon(Main.class.getResource("propiedades.png")), propiedades, propiedades[0]);
+		 opcion = JOptionPane.showOptionDialog(null, "Accion", "Inmobiliria", 0, JOptionPane.DEFAULT_OPTION, new ImageIcon(Main.class.getResource("inmo6.jpg")), propiedades, propiedades[0]);
 
 		 while (opcion != 3) {
 			 if (opcion == 0) {
-				 JOptionPane.showMessageDialog(null,"Puerto Madero",null, JOptionPane. DEFAULT_OPTION, new ImageIcon (BairesRent.class.getResource ("madero.jpeg")));   
+				 JOptionPane.showMessageDialog(null,"Puerto Madero", "Departamento", JOptionPane. DEFAULT_OPTION, new ImageIcon (BairesRent.class.getResource ("madero.jpeg")));   
 					int precio = (int) (Math.random()*1000000 + 1);
 					JOptionPane.showMessageDialog(null, " Hermosa habitacion para " + huespedes + " huespedes " + " con " + dormitorios + " dormitorios"+ " Disponible desde " + periodo + " con un precio de " + precio) ;
 			        String pregunta = JOptionPane.showInputDialog("Desea alquilarlo?");
@@ -228,7 +232,6 @@ public class BairesRent {
 
 				} else if (pregunta.equalsIgnoreCase("no")) {
 					alquilado = false;
-					opcion = JOptionPane.showOptionDialog(null, "Accion", "Veterinaria", 0, JOptionPane.DEFAULT_OPTION, new ImageIcon(Main.class.getResource("images.png")), propiedades, propiedades[0]);
 					
 				}
 			}

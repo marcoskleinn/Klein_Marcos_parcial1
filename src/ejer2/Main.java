@@ -10,8 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		BairesRent propiedad1 = new BairesRent(null, 0, 0, 0, 0, null, false);
-		BairesRent propiedad2 = new BairesRent(null, 0, 0, 0, 0, null, false);
+		BairesRent propiedad1 = new BairesRent(null, 0, 0, 0, 0, null, false, null);
+		BairesRent propiedad2 = new BairesRent(null, 0, 0, 0, 0, null, false, null);
 
 		
 		
